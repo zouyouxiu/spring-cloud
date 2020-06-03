@@ -1,0 +1,19 @@
+server:
+  port: 8100
+spring:
+  application:
+    name: hystrix-turbine
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
+turbine:
+  app-config: service-hystrix
+  cluster-name-expression: "'default'"
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:8081}
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: ${EUREKA-SERVER-URL:http://admin:admin@localhost:8081/eureka}
+  server:
+    enable‐self‐preservation: false
+    #wait-time-in-ms-when-sync-empty: 5
+spring:
+  application:
+    name: eureka-server
+  security:
+    user:
+      name: admin
+      password: admin

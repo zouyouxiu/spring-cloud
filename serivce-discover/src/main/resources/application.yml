@@ -1,0 +1,16 @@
+server:
+  port: 8092
+spring:
+  application:
+    name: service-discover
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://admin:admin@localhost:8081/eureka
+  instance:
+    prefer-ip-address: true
+service-register:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
